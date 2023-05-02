@@ -1,0 +1,3 @@
+int screen();
+int text();
+

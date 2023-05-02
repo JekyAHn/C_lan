@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<screen.h>
+
+
+int screen1()
+{
+	printf("1번 화면 출력 입니다 ㅎㅎㅎ\n");
+	printf("1번을 누르면 계속 1번화면 출력\n");
+	printf("2번을 누르면 2번화면 출력\n");
+	printf("3번을 누르면 프로그램 종료\n");
+	return 0;
+}
+
+int screen2()
+{
+	printf("2번 화면 출력 입니다. ㅜㅜㅜ\n");
+	printf("1번을 누르면 1번 화면 출력\n");
+	printf("2번을 누르면 계속 2번화면 출력\n");
+
+	return 0;
+}
