@@ -1,7 +1,11 @@
 #include"textscreen.h"
 #include <string.h>
+#include <time.h>
+#include <windows.h>
 
-int clearbuffer(char* screen, int width, int height)
+
+
+int clear(char* screen, int width, int height)
 
 {
     int w = 0;
@@ -43,7 +47,7 @@ int clearbuffer(char* screen, int width, int height)
     return 0; 
 }
 
-int writeBuffer(const char* string, int x, int y, char* screen, int width)
+int write(const char* string, int x, int y, char* screen, int width)
 {
     int length = strlen(string);
     int i;
@@ -56,74 +60,76 @@ int writeBuffer(const char* string, int x, int y, char* screen, int width)
     return x + length;
 }
 
-int TitleBuffer(char* screen, int width, int height)
+
+int title(char* screen, int width, int height)
 {
     int x = width ;
     int y = height ;
+    
 
-    writeBuffer("I L o v e          r a n d o m", 13, 10, screen, width);
-    writeBuffer("p l a n t !!", 21, 13, screen, width);
-    writeBuffer("- - - - - --", 21, 14, screen, width);
-    writeBuffer("0 1. Plant grow", 5, 22, screen, width);
-    writeBuffer("0 2. Plant guide", 5, 25, screen, width);
-    writeBuffer("0 3. Plant game exit", 5, 28, screen, width);
+    write("I L o v e          r a n d o m", 13, 10, screen, width);
+    write("p l a n t !!", 21, 13, screen, width);
+    write("- - - - - --", 21, 14, screen, width);
+    write("0 1. Plant grow", 5, 22, screen, width);
+    write("0 2. Plant guide", 5, 25, screen, width); 
+    write("0 3. Plant game exit", 5, 28, screen, width);
 }
-int guideBuffer(char* screen, int width, int height)
+int guide(char* screen, int width, int height)
 {
     int x = width ;
     int y = height ;
-    writeBuffer(" ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^",4, 3, screen, width);
-    writeBuffer("^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ", 4, 4, screen, width);
-    writeBuffer("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 4, 5, screen, width);
-    writeBuffer("The growth of a plant varies", 15, 8, screen, width);
-    writeBuffer("depending on your choices.", 16, 10, screen, width);
-    writeBuffer("Provide water and sunlight to facilitate", 8, 12, screen, width);
-    writeBuffer("-----     -------", 16, 13, screen, width);
-    writeBuffer("he plant's growth and eliminate pests.", 10, 14, screen, width);
-    writeBuffer("Would you like to hear the explanation again", 6, 16, screen, width);
-    writeBuffer("===========", 10, 20, screen, width);
-    writeBuffer("\\", 10, 21, screen, width);
-    writeBuffer("\\", 10, 22, screen, width);
-    writeBuffer("\\", 10, 23, screen, width);
-    writeBuffer("YES", 14, 22, screen, width);
-    writeBuffer("Push1", 13, 25, screen, width);  
-    writeBuffer("\\", 20, 21, screen, width);
-    writeBuffer("\\", 20, 22, screen, width);
-    writeBuffer("\\", 20, 23, screen, width);
-    writeBuffer("===========", 10, 24, screen, width);
-    writeBuffer("===========", 35, 20, screen, width);
-    writeBuffer("\\", 35, 21, screen, width);
-    writeBuffer("\\", 35, 22, screen, width);
-    writeBuffer("\\", 35, 23, screen, width);
-    writeBuffer("NO", 40, 22, screen, width);
-    writeBuffer("Push2", 38, 25, screen, width);
-    writeBuffer("\\", 45, 21, screen, width);
-    writeBuffer("\\", 45, 22, screen, width);
-    writeBuffer("\\", 45, 23, screen, width);
-    writeBuffer("===========", 35, 24, screen, width);
-    writeBuffer("><><)()(><><)()(><><)()(><><)()(><><)()(><><)()(", 4, 28, screen, width);
+    write(" ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^",4, 3, screen, width);
+    write("^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ", 4, 4, screen, width);
+    write("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 4, 5, screen, width);
+    write("The growth of a plant varies", 15, 8, screen, width);
+    write("depending on your choices.", 16, 10, screen, width);
+    write("Provide water and sunlight to facilitate", 8, 12, screen, width);
+    write("-----     -------", 16, 13, screen, width);
+    write("he plant's growth and eliminate pests.", 10, 14, screen, width);
+    write("Would you like to hear the explanation again", 6, 16, screen, width);
+    write("===========", 10, 20, screen, width);
+    write("\\", 10, 21, screen, width);
+    write("\\", 10, 22, screen, width);
+    write("\\", 10, 23, screen, width);
+    write("YES", 14, 22, screen, width);
+    write("Push1", 13, 25, screen, width);  
+    write("\\", 20, 21, screen, width);
+    write("\\", 20, 22, screen, width);
+    write("\\", 20, 23, screen, width);
+    write("===========", 10, 24, screen, width);
+    write("===========", 35, 20, screen, width);
+    write("\\", 35, 21, screen, width);
+    write("\\", 35, 22, screen, width);
+    write("\\", 35, 23, screen, width);
+    write("NO", 40, 22, screen, width);
+    write("Push2", 38, 25, screen, width);
+    write("\\", 45, 21, screen, width);
+    write("\\", 45, 22, screen, width);
+    write("\\", 45, 23, screen, width);
+    write("===========", 35, 24, screen, width);
+    write("><><)()(><><)()(><><)()(><><)()(><><)()(><><)()(", 4, 28, screen, width);
 
 }
 
-int GameOverBuffer(char* screen, int width, int height)
+int gameOver(char* screen, int width, int height)
 {
     int x = width ;
     int y = height ;
 
-    writeBuffer("NAGAJIMA", 4, 1, screen, width);
-    writeBuffer("Are you sure you want to end the game", 10, 3, screen, width);
-    writeBuffer("and leave the cute and lovely", 14, 5, screen, width);
-    writeBuffer("plant in the pot?", 20, 7, screen, width);
-    writeBuffer("Are you sure you want to end the game", 10, 9, screen, width);
-    writeBuffer("and leave the cute and lovely", 14, 11, screen, width);
-    writeBuffer("plant in the pot?", 20, 13, screen, width);
-    writeBuffer("Are you sure you want to end the game", 10, 15, screen, width);
-    writeBuffer("and leave the cute and lovely", 14, 17, screen, width);
-    writeBuffer("plant in the pot?", 20, 19, screen, width);
-    writeBuffer("Are you sure you want to end the game", 10, 21, screen, width);
-    writeBuffer("and leave the cute and lovely", 14, 23, screen, width);
-    writeBuffer("plant in the pot?", 20, 25, screen, width);
-    writeBuffer("1.yes..........", 4, 30, screen, width);
-    writeBuffer("2.Nonononononoono", 35, 30, screen, width);
+    write("NAGAJIMA", 4, 1, screen, width);
+    write("Are you sure you want to end the game", 10, 3, screen, width);
+    write("and leave the cute and lovely", 14, 5, screen, width);
+    write("plant in the pot?", 20, 7, screen, width);
+    write("Are you sure you want to end the game", 10, 9, screen, width);
+    write("and leave the cute and lovely", 14, 11, screen, width);
+    write("plant in the pot?", 20, 13, screen, width);
+    write("Are you sure you want to end the game", 10, 15, screen, width);
+    write("and leave the cute and lovely", 14, 17, screen, width);
+    write("plant in the pot?", 20, 19, screen, width);
+    write("Are you sure you want to end the game", 10, 21, screen, width);
+    write("and leave the cute and lovely", 14, 23, screen, width);
+    write("plant in the pot?", 20, 25, screen, width);
+    write("1.yes..........", 4, 30, screen, width);
+    write("2.Nonononononoono", 35, 30, screen, width);
     
 }
