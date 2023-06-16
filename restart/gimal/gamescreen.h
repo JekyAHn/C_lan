@@ -1,5 +1,4 @@
 #include "gamesorce.h"
-void lv2();
 void hate2();
 void gs1();
 void gs2();

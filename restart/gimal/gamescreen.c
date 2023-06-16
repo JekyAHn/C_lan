@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "gamescreen1.h"
+#include "gamescreen.h"
 
 void gameclear()
 {

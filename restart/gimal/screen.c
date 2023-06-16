@@ -1,6 +1,5 @@
 #include"textscreen.h"
 #include "gamesorce.h"
-#include <time.h>
 #include <windows.h>
 #include <stdio.h>
 

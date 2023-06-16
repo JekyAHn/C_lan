@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "textscreen.h"
 #include "gamesorce.h"
 #include "play.h"
@@ -16,7 +15,7 @@ while (start)
 {
     if (t==0)
     {
-        system("cls");
+        cls();
         titleclear();
         title();
 
@@ -31,11 +30,12 @@ while (start)
         cls();
         titleclear();
         end();
-        start = 0;
+        break;
+
     }
     if (in1 == 2)
     {
-        system("cls");
+        cls();
         titleclear();
         guide();
 

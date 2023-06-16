@@ -1,10 +1,5 @@
 #include <stdio.h>
-#include "gamesorce.h"
-#include "gamescreen1.h"
-#include <time.h>
-#include <windows.h>
-#include <conio.h>
-#include <string.h>
+#include "gamescreen.h"
 int plant_exp = 0;
 int level = 1;
 int game = 1;
