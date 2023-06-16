@@ -1,0 +1,11 @@
+#include "gamesorce.h"
+void lv2();
+void hate2();
+void gs1();
+void gs2();
+void gs3();
+void gs4();
+void gs1warring();
+void gs2warring();
+void gs3warring();
+void gs4warring();

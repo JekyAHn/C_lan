@@ -1,0 +1,2 @@
+int user();
+int maingame();
